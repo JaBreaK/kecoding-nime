@@ -2140,7 +2140,7 @@ function Wi() {
   var t;
   const e = (t = _r().nuxt) == null ? void 0 : t.buildId;
   return (
-    (ft = $fetch(Tn(`builds/meta/${e}.json`))),
+    (ft = $fetch(Tn(`/builds/meta/${e}.json`))),
     ft.then((n) => {
       Er = Fa(n.matcher);
     }),
@@ -4318,7 +4318,7 @@ const pl = he({
       const o = await Rt();
       t && clearTimeout(t), (t = setTimeout(n, 1e3 * 60 * 60));
       try {
-        const r = await $fetch(Tn("builds/latest.json") + `?${Date.now()}`);
+        const r = await $fetch(Tn("/builds/latest.json") + `?${Date.now()}`);
         r.id !== o.id && e.hooks.callHook("app:manifest:update", r);
       } catch {}
     }
