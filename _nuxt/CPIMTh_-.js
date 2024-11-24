@@ -2140,7 +2140,7 @@ function Wi() {
   var t;
   const e = (t = _r().nuxt) == null ? void 0 : t.buildId;
   return (
-    (ft = $fetch(Tn(`/json/${e}.json`))),
+    (ft = $fetch(Tn(`builds/meta/${e}.json`))),
     ft.then((n) => {
       Er = Fa(n.matcher);
     }),
