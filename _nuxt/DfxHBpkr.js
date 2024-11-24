@@ -221,7 +221,7 @@ const mt = { class: "bg-server pb-3" },
               theme: {
                 primaryColor: "rgba(244, 114, 182, 1)",
                 watermark: {
-                  src: "static/layer.png",
+                  src: "layer.png",
                   attrs: { class: "watermark", crossOrigin: "anonymous" },
                 },
               },
