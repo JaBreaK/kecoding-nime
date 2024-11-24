@@ -1,0 +1,45 @@
+.content {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 480px;
+    width: 100%
+}
+
+.content,
+.van-theme-light body {
+    background-color: #fff
+}
+
+.van-theme-dark body {
+    background-color: #1c1c1e
+}
+
+.van-theme-dark .content {
+    background-color: #1c1c1e;
+    color: #f5f5f5
+}
+
+.van-theme-light .ng-text {
+    color: #323233 !important
+}
+
+.van-theme-dark .ng-text {
+    color: #f5f5f5 !important
+}
+
+:root:root {
+    --var-nusanime-magenta: #f472b6;
+    --var-nusanime-green: #22c55e;
+    --van-nav-bar-title-text-color: #f472b6;
+    --van-nav-bar-text-color: #f472b6;
+    --van-nav-bar-icon-color: #f472b6;
+    --van-tabbar-item-active-color: #f472b6
+}
+
+.color-scheme-magenta {
+    color: #f472b6
+}
+
+.color-scheme-green {
+    color: #22c55e
+}

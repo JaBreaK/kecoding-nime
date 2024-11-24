@@ -1,0 +1,1 @@
+:host,:root{--van-text-ellipsis-line-height:1.6;--van-text-ellipsis-action-color:var(--van-blue)}.van-text-ellipsis{line-height:var(--van-text-ellipsis-line-height);overflow-wrap:break-word;white-space:pre-wrap}.van-text-ellipsis__action{color:var(--van-text-ellipsis-action-color);cursor:pointer}.van-text-ellipsis__action:active{opacity:var(--van-active-opacity)}

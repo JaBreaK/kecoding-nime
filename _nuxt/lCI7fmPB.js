@@ -1,0 +1,1 @@
+import{u as s}from"./BzjI3Yoo.js";import{J as t,M as a,aj as o,I as r}from"./CS_v0reC.js";import"./CPIMTh_-.js";const l={class:"content shadow-inset"},u={__name:"default",setup(n){return s({link:[{rel:"stylesheet",href:"//site-assets.fontawesome.com/releases/v6.2.0/css/all.css"}]}),(e,c)=>(r(),t("div",null,[a("main",l,[o(e.$slots,"default")])]))}};export{u as default};
