@@ -1,11 +1,25 @@
-# Enable mod_rewrite
-RewriteEngine On
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
 
-# Redirect HTTP to HTTPS (gunakan jika situs Anda menggunakan SSL)
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    RewriteEngine On
 
-# Jika domain Anda adalah kecoding-nime.com dan ingin memproksi ke GitHub Pages
-# Pastikan proxy bekerja dengan benar
-RewriteCond %{HTTP_HOST} ^(www\.)?kecoding-nime\.com$ [NC]
-RewriteRule ^(.*)$ https://jabreak.github.io/kecoding-nime/$1 [L,R=301]
+    # Handle Authorization MemberHeader (untuk header otorisasi)
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+    
+    # Redirect ke GitHub Pages jika domainnya adalah kecoding-nime.com
+    RewriteCond %{HTTP_HOST} ^(www\.)?kecoding-nime\.com$ [NC]
+    RewriteRule ^(.*)$ https://jabreak.github.io/kecoding-nime/$1 [L,R=301]
+
+    # Jika ingin mengarahkan ke index.html, dan tidak menggunakan folder public
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [L]
+</IfModule>
