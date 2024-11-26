@@ -1,0 +1,11 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# Redirect HTTP to HTTPS (gunakan jika situs Anda menggunakan SSL)
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Jika domain Anda adalah kecoding-nime.com dan ingin memproksi ke GitHub Pages
+# Pastikan proxy bekerja dengan benar
+RewriteCond %{HTTP_HOST} ^(www\.)?kecoding-nime\.com$ [NC]
+RewriteRule ^(.*)$ https://jabreak.github.io/kecoding-nime/$1 [L,R=301]
